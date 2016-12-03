@@ -1,0 +1,44 @@
+<% content_for :title, 'admin | Action Cable Chat' %>
+<div class="header">
+  <div class="team-menu">whatEverYouSay</div>
+
+  <div class="channel-menu">
+    <span class="channel-menu_name"><span class="channel-menu_prefix">#</span>whatEverYouSay</span>
+  </div>
+</div>
+<div class="main">
+  <div class="listings">
+    <div class="listings_channels">
+      <h2 class="listings_header">General</h2>
+      <ul class="channel_list">
+        <li class="channel active">
+          <a class="channel_name"><span><span class="prefix">#</span>Language</span></a>
+        </li>
+        <li class="channel">
+          <a class="channel_name"><span><span><span class="prefix">#</span>Settings</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="listings_direct-messages">
+      <h2 class="listings_header">file upload</h2>
+      <ul class="channel_list">
+        <li class="channel">
+          <a class="channel_name"><span><span><span class="prefix"> </span>User Profile</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="message-history" id="messages">
+    <%= render @messages %>
+  </div>
+</div>
+<div class="footer">
+  <div class="user-menu">
+    <span class="user-menu_profile-pic"><i class="fa fa-user" aria-hidden="true"></i> </span><span class="user-menu_username"><%= current_user.email %></span>
+    <span class="connection_status">online</span>
+    <span class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
+  </div>
+  <div class="input-box">
+    <input type="text" class="input-box_text" id="message_input"/>
+  </div>
+</div>
